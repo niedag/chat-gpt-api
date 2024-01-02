@@ -5,6 +5,7 @@ from typing import Literal
 
 client = OpenAI(api_key='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')
 
+
 def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-4"):
     completion = client.chat.completions.create(
         model=model,
@@ -56,3 +57,8 @@ def talk_to_dal_e_3(
     finally:
         return response_url
 
+def main():
+    talk_to_gpt_model("test", "test")    
+
+if __name__ = "__main__":
+    main()
