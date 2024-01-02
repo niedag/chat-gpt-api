@@ -58,7 +58,7 @@ def talk_to_dal_e_3(
         return response_url
 
 def main():
-    talk_to_gpt_model("test", "test")    
+    talk_to_gpt_model("this is a simple api test", "answer me by saying 'test' back to me")    
 
 if __name__ = "__main__":
     main()
