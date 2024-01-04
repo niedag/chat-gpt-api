@@ -22,8 +22,6 @@ def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-3"):
     #     return completion["choices"][0]["message"]["content"]
     # else:
     #     raise Exception(f"unexpected response status: {completion['http_status']}")
-    
-    
 
     return completion.choices[0].message.content
 
