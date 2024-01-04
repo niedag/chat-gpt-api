@@ -3,10 +3,11 @@ import requests
 from json import JSONDecodeError
 from typing import Literal
 
+# Enter your own valid API Key
 client = OpenAI(api_key='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')
 
 
-def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-4"):
+def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-3"):
     completion = client.chat.completions.create(
         model=model,
         response_format={"type": "json_object"},
@@ -56,9 +57,3 @@ def talk_to_dal_e_3(
 
     finally:
         return response_url
-
-def main():
-    talk_to_gpt_model("this is a simple api test", "answer me by saying 'test' back to me")    
-
-if __name__ == "__main__":
-    main()
