@@ -16,8 +16,13 @@ def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-3"):
             {"role": "user", "content": prompt}
         ]
     )
-    # TODO: Exception catching and logging needs to be implemented here for any status not 200.
-
+    
+    # # Exception catching and logging needs to be implemented here for any status not 200.
+    # if completion["http_status"] == 200:
+    #     return completion["choices"][0]["message"]["content"]
+    # else:
+    #     raise Exception(f"unexpected response status: {completion['http_status']}")
+    
     return completion.choices[0].message.content
 
 
