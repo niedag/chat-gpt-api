@@ -4,26 +4,28 @@ from json import JSONDecodeError
 from typing import Literal
 
 # Enter your own valid API Key
-client = OpenAI(api_key='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')
+client = OpenAI(api_key='')
 
+def talk_to_gpt_model(base_context: str, prompt: str, model: str = "text-davinci-003"):
+    try:
+        completion = client.chat.completions.create(
+            model=model,
+            response_format={"type": "json_object"},
+            messages=[
+                {"role": "system", "content": base_context + " [json]"},
+                {"role": "user", "content": prompt}
+            ]
+        )
+        
+        # Exception catching for any status not 200.
+        if completion["http_status"] == 200:
+            return completion["choices"][0]["message"]["content"]
+        else:
+            raise Exception(f"unexpected response status: {completion['http_status']}")
 
-def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-3"):
-    completion = client.chat.completions.create(
-        model=model,
-        response_format={"type": "json_object"},
-        messages=[
-            {"role": "system", "content": base_context + " [json]"},
-            {"role": "user", "content": prompt}
-        ]
-    )
-    
-    # # Exception catching and logging needs to be implemented here for any status not 200.
-    # if completion["http_status"] == 200:
-    #     return completion["choices"][0]["message"]["content"]
-    # else:
-    #     raise Exception(f"unexpected response status: {completion['http_status']}")
-
-    return completion.choices[0].message.content
+        # return completion.choices[0].message.content
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
 
 
 def talk_to_dal_e_3(
@@ -62,3 +64,15 @@ def talk_to_dal_e_3(
 
     finally:
         return response_url
+
+def main():
+    base_content = "enter your base content here"
+    user_prompt = "enter your prompt here"
+
+    try:
+        result = talk_to_gpt_model(base_content, user_prompt)
+    except Exception as e:
+            print(f'Error has occurred: {str(e)}')
+
+if __name__ == "__main__":
+    main()
