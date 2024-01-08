@@ -1,0 +1,5 @@
+# Private variables
+.env
+
+# Idea test files
+.idea
