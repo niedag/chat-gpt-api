@@ -8,8 +8,21 @@ load_dotenv()
 
 # Enter your own valid API Key
 client = OpenAI(
-    api_key=os.environ.get("OPENAI_API_KEY"),
+    #api_key=os.environ.get("OPENAI_API_KEY"),
 )
+
+# Sample method based on the quick start guide
+def sample_api_request():
+    completion = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system",
+             "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."},
+            {"role": "user", "content": "Compose a poem that explains the concept of recursion in programming."}
+        ]
+    )
+
+    print(completion.choices[0].message)
 
 def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-4"):
     try:
@@ -21,7 +34,7 @@ def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-4"):
                 {"role": "user", "content": prompt}
             ]
         )
-        
+
         # Exception catching for any status not 200.
         if completion["http_status"] == 200:
             return completion["choices"][0]["message"]["content"]
@@ -71,14 +84,15 @@ def talk_to_dal_e_3(
         return response_url
 
 def main():
-    base_content = "enter your base content here"
-    user_prompt = "enter your prompt here"
-
-    try:
-        result = talk_to_gpt_model(base_content, user_prompt)
-    except Exception as e:
-            print(f'Error has occurred: {str(e)}')
+    sample_api_request()
+    # base_content = "enter your base content here"
+    # user_prompt = "enter your prompt here"
+    #
+    # try:
+    #     result = talk_to_gpt_model(base_content, user_prompt)
+    # except Exception as e:
+    #         print(f'Error has occurred: {str(e)}')
 
 if __name__ == "__main__":
     main()
-    
+
