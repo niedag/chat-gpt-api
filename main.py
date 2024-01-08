@@ -2,11 +2,16 @@ from openai import OpenAI
 import requests
 from json import JSONDecodeError
 from typing import Literal
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Enter your own valid API Key
-client = OpenAI(api_key='')
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY"),
+)
 
-def talk_to_gpt_model(base_context: str, prompt: str, model: str = "text-davinci-003"):
+def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-4"):
     try:
         completion = client.chat.completions.create(
             model=model,
