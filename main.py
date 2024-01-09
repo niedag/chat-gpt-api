@@ -8,7 +8,7 @@ load_dotenv()
 
 # Enter your own valid API Key
 client = OpenAI(
-    #api_key=os.environ.get("OPENAI_API_KEY"),
+    api_key=os.environ.get("OPENAI_API_KEY"),
 )
 
 # Sample method based on the quick start guide
