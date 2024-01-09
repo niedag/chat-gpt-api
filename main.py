@@ -33,14 +33,11 @@ def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-4"):
                 {"role": "user", "content": prompt}
             ]
         )
-
         # Exception catching for any status not 200.
-        if completion["http_status"] == 200:
-            return completion["choices"][0]["message"]["content"]
+        if completion.choices[0].finish_reason == "stop":
+            return completion.choices[0].message.content
         else:
-            raise Exception(f"unexpected response status: {completion['http_status']}")
-
-        # return completion.choices[0].message.content
+            raise Exception(f"unexpected response status: {completion.choices[0].finish_reason}")
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
