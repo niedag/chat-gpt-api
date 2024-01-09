@@ -14,7 +14,7 @@ client = OpenAI(
 # Sample method based on the quick start guide
 def sample_api_request():
     completion = client.chat.completions.create(
-        model="gpt-3.5-turbo-1106",
+        model="gpt-4-1106-preview",
         messages=[
             {"role": "system",
              "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."},
@@ -80,13 +80,6 @@ def talk_to_dal_e_3(
 
 def main():
     sample_api_request()
-    # base_content = "enter your base content here"
-    # user_prompt = "enter your prompt here"
-    #
-    # try:
-    #     result = talk_to_gpt_model(base_content, user_prompt)
-    # except Exception as e:
-    #         print(f'Error has occurred: {str(e)}')
 
 if __name__ == "__main__":
     main()
