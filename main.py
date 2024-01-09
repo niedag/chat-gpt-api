@@ -14,14 +14,13 @@ client = OpenAI(
 # Sample method based on the quick start guide
 def sample_api_request():
     completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-3.5-turbo-1106",
         messages=[
             {"role": "system",
              "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."},
             {"role": "user", "content": "Compose a poem that explains the concept of recursion in programming."}
         ]
     )
-
     print(completion.choices[0].message)
 
 def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-4"):
@@ -44,7 +43,6 @@ def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-4"):
         # return completion.choices[0].message.content
     except Exception as e:
         print(f"An error occurred: {str(e)}")
-
 
 def talk_to_dal_e_3(
         prompt: str, model: str = "dall-e-3", number_of_images:int = 1,
