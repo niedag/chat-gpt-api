@@ -23,7 +23,7 @@ def sample_api_request():
     )
     print(completion.choices[0].message)
 
-def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-4"):
+def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-4-1106-preview"):
     try:
         completion = client.chat.completions.create(
             model=model,
@@ -41,7 +41,7 @@ def talk_to_gpt_model(base_context: str, prompt: str, model: str = "gpt-4"):
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
-def talk_to_dal_e_3(
+def talk_to_dall_e_3(
         prompt: str, model: str = "dall-e-3", number_of_images:int = 1,
         size: Literal["256x256", "512x512", "1024x1024", "1792x1024", "1024x1792"] = "1024x1024"):
     response_url = ""
@@ -79,7 +79,7 @@ def talk_to_dal_e_3(
         return response_url
 
 def main():
-    sample_api_request()
+    print(talk_to_gpt_model("You are a 3000 IQ robot", "Write me the most beautiful mathematical formula"))
 
 if __name__ == "__main__":
     main()
