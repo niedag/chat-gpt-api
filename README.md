@@ -15,3 +15,7 @@ For chat completion responses, only **gpt-4-1106-preview** and **gpt-3.5-turbo-1
 
 You must pay $5 to the AI gods for Tier 1 in order to use gpt4 or dalle-3 requests.
 It is $0.04 per image for Dalle3 and $0.01 per GPT4 call 
+=======
+**Model Selection**
+
+For chat completion responses, only **gpt-4-1106-preview** and **gpt-3.5-turbo-1106** will return.
