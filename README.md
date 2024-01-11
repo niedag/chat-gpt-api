@@ -18,4 +18,4 @@ It is $0.04 per image for Dalle3 and $0.01 per GPT4 call**
 
 ======= **Model Selection** =======
 
-For chat completion responses, only **gpt-4-1106-preview** and **gpt-3.5-turbo-1106** will return.
+For chat completion responses, only **gpt-4-1106-preview** and **gpt-3.5-turbo-1106** will return a parsable json response.
