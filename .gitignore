@@ -3,3 +3,6 @@
 
 # IDE project test files
 .idea/
+
+#venv
+openai-env/
