@@ -4,7 +4,9 @@ testing chat gpt api calling and DALL-E image generation
 
 For the Exception Catching for Talk To GPT Model
 completion["choices"]: the choices field contains an array of potential completions ranked by the model.
+
 return completion["choices"][0]["message"]["content"] 
+
 means returning the choice 1 model
 
 Message: information related to a specific choice made by the model (the container for metadata and content)
