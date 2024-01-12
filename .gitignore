@@ -2,7 +2,8 @@
 .env
 
 # IDE project test files
+.idea/workspace.xml
 .idea/
 
 #venv
-openai-env/
+openai-venv/
