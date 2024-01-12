@@ -2,4 +2,7 @@
 .env
 
 # IDE project test files
-.idea
+.idea/
+
+#venv
+openai-env/
