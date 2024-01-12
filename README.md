@@ -1,6 +1,6 @@
 # gpt-api-tester
-testing chat gpt api calling and DALL-E image generation
-
+- testing chat gpt api calling and DALL-E image generation
+- a template for function based integration
 
 For the Exception Catching for Talk To GPT Model
 completion["choices"]: the choices field contains an array of potential completions ranked by the model.
@@ -19,3 +19,7 @@ It is $0.04 per image for Dalle3 and $0.01 per GPT4 call**
 ======= **Model Selection** =======
 
 For chat completion responses, only **gpt-4-1106-preview** and **gpt-3.5-turbo-1106** will return a parsable json response.
+
+==== **USAGE** ====
+- Create your own .env file and add variable OPENAI_API_KEY with your own secret key (leave it without '' or "")
+- In the main(), when you call the function, you need to specify your own prompt (and context for text interaction)
