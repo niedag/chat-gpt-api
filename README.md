@@ -1,6 +1,15 @@
 # gpt-api-tester
+
 - testing chat gpt api calling and DALL-E image generation
 - a template for function based integration
+
+
+Create a virtual environment 
+```python venv openai-venv)```
+ 
+Then import packages with:
+```pip install -r requirements.txt```
+
 
 For the Exception Catching for Talk To GPT Model
 completion["choices"]: the choices field contains an array of potential completions ranked by the model.

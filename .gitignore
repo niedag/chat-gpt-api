@@ -3,7 +3,7 @@
 
 # IDE project test files
 .idea/workspace.xml
-.idea/
+.idea
 
 #venv
 openai-venv/
