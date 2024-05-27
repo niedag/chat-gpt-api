@@ -32,3 +32,7 @@ For chat completion responses, only **gpt-4-1106-preview** and **gpt-3.5-turbo-1
 ==== **USAGE** ====
 - Create your own .env file and add variable OPENAI_API_KEY with your own secret key (leave it without '' or "")
 - In the main(), when you call the function, you need to specify your own prompt (and context for text interaction)
+
+
+
+This is written for ChatGPT as of March 2024
