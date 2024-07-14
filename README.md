@@ -37,3 +37,5 @@ For chat completion responses, only **gpt-4-1106-preview** and **gpt-3.5-turbo-1
 
 This is written for ChatGPT as of March 2024, script has NOT been updated since and may not interact with current version of the API.
 ...
+
+
