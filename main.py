@@ -78,7 +78,7 @@ def talk_to_dall_e_3(
     finally:
         return response_url
 
-def main():
+def main(): # Test the prompt here by changing the input to the talk_to_gpt_model() function!
     print(talk_to_gpt_model("You are a 3000 IQ robot", "Write me the most beautiful mathematical formula"))
 
 if __name__ == "__main__":
