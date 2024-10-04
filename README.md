@@ -40,3 +40,4 @@ This is written for ChatGPT as of March 2024, script has NOT been updated since 
 
 No longer works with newer versions of GPT4
 
+
